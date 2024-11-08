@@ -9,7 +9,7 @@ class Pagamento
         $this->pdo = $pdo;
     }
 
-    public function registerPayment($associado_id, $anuidade_id, $status_id)
+    public function registrarPagamento($associado_id, $anuidade_id, $status_id)
 {
     $stmt = $this->pdo->prepare("INSERT INTO pagamentos (associado_id, anuidade_id, status_id) VALUES (:associado_id, :anuidade_id, :status_id)");
     $stmt->bindParam(':associado_id', $associado_id, PDO::PARAM_INT);

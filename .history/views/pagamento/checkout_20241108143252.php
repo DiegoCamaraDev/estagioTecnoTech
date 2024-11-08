@@ -76,22 +76,23 @@ if (empty($associados)) {
                             <td><?php echo htmlspecialchars($anuidade['ano']); ?></td>
                             <td>R$ <?php echo number_format($anuidade['valor'], 2, ',', '.'); ?></td>
                             <td>Não Pago</td>
-                        </tr>
-                    <?php endforeach; ?>
+            </tr>
+        <?php endforeach; ?>
                     </table>
                 <p><strong>Total Devido:</strong> R$ <?php echo number_format($totalDevido, 2, ',', '.'); ?></p>
-            
-                <form action="pagar.php" method="POST">
+
+    <!-- Aqui é onde você deve colocar o trecho do formulário -->
+        <form action="pagar.php" method="POST">
                 <input type="hidden" name="associado_id" value="<?php echo htmlspecialchars($associado_id); ?>">
                 <label for="anuidade_id">Selecione a Anuidade para Pagar:</label>
                 <select name="anuidade_id" id="anuidade_id">
-                    <?php foreach ($anuidadesDevidas as $anuidade): ?>
-                        <option value="<?php echo htmlspecialchars($anuidade['id']); ?>">
+        <?php foreach ($anuidadesDevidas as $anuidade): ?>
+                <option value="<?php echo htmlspecialchars($anuidade['id']); ?>">
                     <?php echo htmlspecialchars($anuidade['ano'] . ' - R$ ' . number_format($anuidade['valor'], 2, ',', '.')); ?>
-                        </option>
+                </option>
             <?php endforeach; ?>
         </select>
-        
+        <!-- Botão de pagamento -->
         <button type="submit">Realizar Pagamento</button>
     </form>
 <?php else: ?>

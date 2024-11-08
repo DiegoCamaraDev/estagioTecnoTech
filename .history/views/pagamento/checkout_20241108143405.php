@@ -88,10 +88,10 @@ if (empty($associados)) {
                     <?php foreach ($anuidadesDevidas as $anuidade): ?>
                         <option value="<?php echo htmlspecialchars($anuidade['id']); ?>">
                     <?php echo htmlspecialchars($anuidade['ano'] . ' - R$ ' . number_format($anuidade['valor'], 2, ',', '.')); ?>
-                        </option>
+                </option>
             <?php endforeach; ?>
         </select>
-        
+        <!-- Botão de pagamento -->
         <button type="submit">Realizar Pagamento</button>
     </form>
 <?php else: ?>

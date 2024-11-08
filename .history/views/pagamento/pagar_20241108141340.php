@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Inserir um novo pagamento no banco de dados com status de "Pago"
         $status_pago = 2; // Vamos assumir que o ID 2 corresponde ao status "Pago"
-        $resultado = $pagamentoModel->registerPayment($associado_id, $anuidade_id, $status_pago);
+        $resultado = $pagamentoModel->registrarPagamento($associado_id, $anuidade_id, $status_pago);
 
         if ($resultado) {
             echo "Pagamento realizado com sucesso!";

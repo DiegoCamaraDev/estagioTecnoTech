@@ -91,7 +91,7 @@ if (empty($associados)) {
                         </option>
             <?php endforeach; ?>
         </select>
-        
+        <!-- Botão de pagamento -->
         <button type="submit">Realizar Pagamento</button>
     </form>
 <?php else: ?>

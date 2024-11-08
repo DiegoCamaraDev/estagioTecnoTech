@@ -86,12 +86,12 @@ if (empty($associados)) {
                 <label for="anuidade_id">Selecione a Anuidade para Pagar:</label>
                 <select name="anuidade_id" id="anuidade_id">
                     <?php foreach ($anuidadesDevidas as $anuidade): ?>
-                        <option value="<?php echo htmlspecialchars($anuidade['id']); ?>">
+                <option value="<?php echo htmlspecialchars($anuidade['id']); ?>">
                     <?php echo htmlspecialchars($anuidade['ano'] . ' - R$ ' . number_format($anuidade['valor'], 2, ',', '.')); ?>
-                        </option>
+                </option>
             <?php endforeach; ?>
         </select>
-        
+        <!-- Botão de pagamento -->
         <button type="submit">Realizar Pagamento</button>
     </form>
 <?php else: ?>

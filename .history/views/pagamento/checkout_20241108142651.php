@@ -63,41 +63,26 @@ if (empty($associados)) {
         }
         ?>
 
-            <h3>Anuidades Devidas</h3>
-                <?php if (count($anuidadesDevidas) > 0): ?>
-                    <table border="1">
-                        <tr>
-                            <th>Ano</th>
-                            <th>Valor</th>
-                            <th>Status</th>
-                        </tr>
-                        <?php foreach ($anuidadesDevidas as $anuidade): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($anuidade['ano']); ?></td>
-                            <td>R$ <?php echo number_format($anuidade['valor'], 2, ',', '.'); ?></td>
-                            <td>Não Pago</td>
-                        </tr>
-                    <?php endforeach; ?>
-                    </table>
-                <p><strong>Total Devido:</strong> R$ <?php echo number_format($totalDevido, 2, ',', '.'); ?></p>
-            
-                <form action="pagar.php" method="POST">
-                <input type="hidden" name="associado_id" value="<?php echo htmlspecialchars($associado_id); ?>">
-                <label for="anuidade_id">Selecione a Anuidade para Pagar:</label>
-                <select name="anuidade_id" id="anuidade_id">
-                    <?php foreach ($anuidadesDevidas as $anuidade): ?>
-                        <option value="<?php echo htmlspecialchars($anuidade['id']); ?>">
-                    <?php echo htmlspecialchars($anuidade['ano'] . ' - R$ ' . number_format($anuidade['valor'], 2, ',', '.')); ?>
-                        </option>
-            <?php endforeach; ?>
-        </select>
-        
-        <button type="submit">Realizar Pagamento</button>
-    </form>
-<?php else: ?>
-    <p>O associado está em dia com as anuidades.</p>
-<?php endif; ?>
-
+        <h3>Anuidades Devidas</h3>
+        <?php if (count($anuidadesDevidas) > 0): ?>
+            <table border="1">
+                <tr>
+                    <th>Ano</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                </tr>
+                <?php foreach ($anuidadesDevidas as $anuidade): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($anuidade['ano']); ?></td>
+                        <td>R$ <?php echo number_format($anuidade['valor'], 2, ',', '.'); ?></td>
+                        <td>Não Pago</td>
+                    </tr>                    
+                <?php endforeach; ?>
+            </table>
+            <p><strong>Total Devido:</strong> R$ <?php echo number_format($totalDevido, 2, ',', '.'); ?></p>
+        <?php else: ?>
+            <p>O associado está em dia com as anuidades.</p>
+        <?php endif; ?>
 
         <hr>
     <?php endforeach; ?>
