@@ -35,9 +35,8 @@ class Anuidade
     }
 
     public function editarAnuidade($id, $valor)
-{
-    $stmt = $this->pdo->prepare("UPDATE anuidades SET valor = ? WHERE id = ?");
-    return $stmt->execute([$valor, $id]);
-}
-
+    {
+        $stmt = $this->pdo->prepare("UPDATE anuidades SET valor = ? WHERE id = ?");
+        $stmt->execute([$id, $valor]);
+    }
 }

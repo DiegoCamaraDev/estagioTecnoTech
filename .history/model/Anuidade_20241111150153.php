@@ -34,10 +34,12 @@ class Anuidade
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function editarAnuidade($id, $valor)
-{
-    $stmt = $this->pdo->prepare("UPDATE anuidades SET valor = ? WHERE id = ?");
-    return $stmt->execute([$valor, $id]);
-}
+    public function updateAnuidade($ano)
+    {
+       $ $pdo->prepare("UPDATE tarefas SET nome = ?, custo = ?, data_limite = ? WHERE id = ?");
+    $query->execute([$nome, $custo, $data_limite, $id]);
 
+    header("Location: index.php");
+    exit;
+    }
 }
