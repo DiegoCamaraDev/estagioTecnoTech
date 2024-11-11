@@ -23,9 +23,8 @@ Este projeto é um sistema de gestão de associados e anuidades que permite o ca
 ## Instruções de Instalação
 
 1. **Clone o repositório**:
-   ```bash
-   git clone [https://github.com/seu-usuario/seu-repositorio.git
-](https://github.com/DiegoCamaraDev/estagioTecnoTech/)
+(https://github.com/DiegoCamaraDev/estagioTecnoTech/)
+
 2. **Configuração do Banco de Dados:**
 - Crie um banco de dados no MySQL:
  CREATE DATABASE nome_do_banco_de_dados;
