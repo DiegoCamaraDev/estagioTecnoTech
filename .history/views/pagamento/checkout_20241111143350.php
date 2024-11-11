@@ -75,7 +75,7 @@ if (empty($associados)) {
                         <tr>
                             <td> <?php echo htmlspecialchars($anuidade['ano']); ?> </td>
                             <td>R$ <?php echo number_format($anuidade['valor'], 2, ',', '.'); ?></td>
-                            <td><?php echo htmlspecialchars($anuidade['status_pagamento']); ?></td>
+                            <td><?php echo htmlspecial($anuidade['status_pagamento']); ?></td>
                         </tr>
                     <?php endforeach; ?>
                     </table>
@@ -95,7 +95,7 @@ if (empty($associados)) {
                     </select>
 
     <!-- Campo oculto para o Status do Pagamento -->
-    <input  type="hidden" name="status_id" value="1"> <!-- Define como "Pendente" -->
+    <input type="hidden" name="status_id" value="1"> <!-- Define como "Pendente" -->
 
     <button type="submit">Realizar Pagamento</button>
 </form>
@@ -103,7 +103,8 @@ if (empty($associados)) {
     <p>O associado está em dia com as anuidades.</p>
 <?php endif; ?>
 
-<hr>
-<?php endforeach; ?>
+
+        <hr>
+    <?php endforeach; ?>
 </body>
 </html>

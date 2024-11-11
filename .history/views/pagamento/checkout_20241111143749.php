@@ -103,7 +103,7 @@ if (empty($associados)) {
     <p>O associado está em dia com as anuidades.</p>
 <?php endif; ?>
 
-<hr>
-<?php endforeach; ?>
+        <hr>
+    <?php endforeach; ?>
 </body>
 </html>

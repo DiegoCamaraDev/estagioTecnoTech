@@ -24,7 +24,7 @@ if (empty($associados)) {
     <meta charset="UTF-8">
     <title>Lista de Associados</title>
 </head>
-<body>
+    <body>
     <h1>Lista de Associados</h1>
 
     <?php foreach ($associados as $associado): ?>
@@ -103,7 +103,7 @@ if (empty($associados)) {
     <p>O associado está em dia com as anuidades.</p>
 <?php endif; ?>
 
-<hr>
-<?php endforeach; ?>
-</body>
+        <hr>
+    <?php endforeach; ?>
+    </body>
 </html>

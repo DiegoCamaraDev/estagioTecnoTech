@@ -83,7 +83,7 @@ if (empty($associados)) {
             
                 <form action="pagar.php" method="POST">
     <!-- Campo oculto para o ID do Associado -->
-                    <input type="hidden" name="associado_id" value="<?php echo htmlspecialchars($associado['id']); ?>">
+                    <input  name="associado_id" value="<?php echo htmlspecialchars($associado['id']); ?>">
 
                     <label for="anuidade_id">Selecione a Anuidade para Pagar:</label>
                     <select name="anuidade_id" id="anuidade_id">
@@ -95,7 +95,7 @@ if (empty($associados)) {
                     </select>
 
     <!-- Campo oculto para o Status do Pagamento -->
-    <input  type="hidden" name="status_id" value="1"> <!-- Define como "Pendente" -->
+    <input type="hidden" name="status_id" value="1"> <!-- Define como "Pendente" -->
 
     <button type="submit">Realizar Pagamento</button>
 </form>
@@ -103,7 +103,8 @@ if (empty($associados)) {
     <p>O associado está em dia com as anuidades.</p>
 <?php endif; ?>
 
-<hr>
-<?php endforeach; ?>
+
+        <hr>
+    <?php endforeach; ?>
 </body>
 </html>

@@ -95,7 +95,7 @@ if (empty($associados)) {
                     </select>
 
     <!-- Campo oculto para o Status do Pagamento -->
-    <input  type="hidden" name="status_id" value="1"> <!-- Define como "Pendente" -->
+    <input  name="status_id" value="2"> <!-- Define como "Pendente" -->
 
     <button type="submit">Realizar Pagamento</button>
 </form>
@@ -103,7 +103,8 @@ if (empty($associados)) {
     <p>O associado está em dia com as anuidades.</p>
 <?php endif; ?>
 
-<hr>
-<?php endforeach; ?>
+
+        <hr>
+    <?php endforeach; ?>
 </body>
 </html>

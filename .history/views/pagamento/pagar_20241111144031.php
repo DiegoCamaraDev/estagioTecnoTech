@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Recebe os dados do formulário
     $associado_id = $_POST['associado_id'];
     $anuidade_id = $_POST['anuidade_id'];
+    $status_id = $_POST['status_id']; // O valor de status_id provavelmente não será necessário, pois vamos usar 'pago'
 
     // Verifica se o ID da anuidade foi enviado corretamente
     if (!empty($associado_id) && !empty($anuidade_id)) {
@@ -18,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $anuidadeModel = new Anuidade($pdo);
         $pagamentoModel = new Pagamento($pdo);
 
-        // Atualiza o status do pagamento na tabela de anuidades para "pago"
+        // Atualiza o status da anuidade para 'pago' (no banco de dados)
         $sqlUpdate = "UPDATE anuidades SET status_pagamento = 'pago' WHERE id = :anuidade_id";
         $stmtUpdate = $pdo->prepare($sqlUpdate);
         $stmtUpdate->bindParam(':anuidade_id', $anuidade_id, PDO::PARAM_INT);
