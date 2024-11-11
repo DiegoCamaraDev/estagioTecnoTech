@@ -9,30 +9,12 @@ class Pagamento
         $this->pdo = $pdo;
     }
 
-    public function registerPayment($associadoId, $anuidadeId, $statusId)
-{
-    // Verifique se o pagamento já existe
-    $sql = "SELECT COUNT(*) FROM pagamentos WHERE associado_id = :associadoId AND anuidade_id = :anuidadeId";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute(['associadoId' => $associadoId, 'anuidadeId' => $anuidadeId]);
-    $pagamentoExiste = $stmt->fetchColumn();
-
-    if ($pagamentoExiste) {
-        // Atualize o pagamento existente para "Pago"
-        $sql = "UPDATE pagamentos SET status_id = :statusId WHERE associado_id = :associadoId AND anuidade_id = :anuidadeId";
-    } else {
-        // Insira um novo registro de pagamento
-        $sql = "INSERT INTO pagamentos (associado_id, anuidade_id, status_id) VALUES (:associadoId, :anuidadeId, :statusId)";
+    public function registerPayment($associado_id, $anuidade_id, $status_id = 1)
+    {
+    $stmt = $this->pdo->prepare("INSERT INTO pagamentos (associado_id, anuidade_id, status_id) VALUES (?, ?, ?)");
+    $stmt->execute([$associado_id, $anuidade_id, $status_id]);
+    return $stmt->rowCount();
     }
-
-    $stmt = $this->pdo->prepare($sql);
-    return $stmt->execute([
-        'associadoId' => $associadoId,
-        'anuidadeId' => $anuidadeId,
-        'statusId' => $statusId
-    ]);
-}
-
 
 
 

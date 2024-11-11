@@ -92,7 +92,7 @@ if (empty($associados)) {
                                 <?php echo htmlspecialchars($anuidade['ano'] . ' - R$ ' . number_format($anuidade['valor'], 2, ',', '.')); ?>
                             </option>
                         <?php endforeach; ?>
-                    </select>
+    </select>
 
     <!-- Campo oculto para o Status do Pagamento -->
     <input type="hidden" name="status_id" value="1"> <!-- Define como "Pendente" -->

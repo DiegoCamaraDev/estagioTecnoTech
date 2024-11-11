@@ -12,7 +12,7 @@ if (isset($_POST['associado_id'], $_POST['anuidade_id'], $_POST['status_id'])) {
 
     try {
         // Tente registrar o pagamento no banco de dados
-        $pagamentoEfetuado = $pagamentoModel->registerPayment($associadoId, $anuidadeId, $statusId);
+        $pagamentoEfetuado = $pagamentoModel->re($associadoId, $anuidadeId, $statusId);
 
         if ($pagamentoEfetuado) {
             echo "Pagamento efetuado com sucesso!";

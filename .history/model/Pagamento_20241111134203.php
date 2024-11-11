@@ -9,7 +9,7 @@ class Pagamento
         $this->pdo = $pdo;
     }
 
-    public function registerPayment($associadoId, $anuidadeId, $statusId)
+    public function registrarPagamento($associadoId, $anuidadeId, $statusId)
 {
     // Verifique se o pagamento já existe
     $sql = "SELECT COUNT(*) FROM pagamentos WHERE associado_id = :associadoId AND anuidade_id = :anuidadeId";

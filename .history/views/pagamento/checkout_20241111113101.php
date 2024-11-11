@@ -83,16 +83,16 @@ if (empty($associados)) {
             
                 <form action="pagar.php" method="POST">
     <!-- Campo oculto para o ID do Associado -->
-                    <input type="hidden" name="associado_id" value="<?php echo htmlspecialchars($associado['id']); ?>">
+                <input type="hidden" name="associado_id" value="<?php echo htmlspecialchars($associado['id']); ?>">
 
-                    <label for="anuidade_id">Selecione a Anuidade para Pagar:</label>
-                    <select name="anuidade_id" id="anuidade_id">
-                        <?php foreach ($anuidadesDevidas as $anuidade): ?>
-                            <option value="<?php echo htmlspecialchars($anuidade['id']); ?>">
-                                <?php echo htmlspecialchars($anuidade['ano'] . ' - R$ ' . number_format($anuidade['valor'], 2, ',', '.')); ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
+                <label for="anuidade_id">Selecione a Anuidade para Pagar:</label>
+                <select name="anuidade_id" id="anuidade_id">
+        <?php foreach ($anuidadesDevidas as $anuidade): ?>
+            <option value="<?php echo htmlspecialchars($anuidade['id']); ?>">
+                <?php echo htmlspecialchars($anuidade['ano'] . ' - R$ ' . number_format($anuidade['valor'], 2, ',', '.')); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
 
     <!-- Campo oculto para o Status do Pagamento -->
     <input type="hidden" name="status_id" value="1"> <!-- Define como "Pendente" -->

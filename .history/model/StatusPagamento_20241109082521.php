@@ -10,25 +10,24 @@ class StatusPagamento
     }
 
     // Método para listar todos os status de pagamento
-    public function list()
-    {
-        $sql = "SELECT 
-                    a.nome AS associado_nome,
-                    an.id AS anuidade_id,
-                    an.ano AS anuidade_ano,
-                    an.valor AS anuidade_valor,
-                    COALESCE(sp.descricao, 'Pendente') AS status_descricao
-                FROM associados a
-                CROSS JOIN anuidades an
-                LEFT JOIN pagamentos p ON a.id = p.associado_id AND an.id = p.anuidade_id
-                LEFT JOIN status_pagamento sp ON p.status_id = sp.id
-                ORDER BY a.nome, an.ano";
-
-        $stmt = $this->pdo->prepare($sql);
+    public function list() {
+        $query = "
+            SELECT 
+                p.id AS pagamento_id,
+                a.nome AS associado_nome,
+                an.descricao AS anuidade_descricao,
+                sp.descricao AS status_descricao
+            FROM pagamentos p
+            JOIN associados a ON p.associado_id = a.id
+            JOIN anuidades an ON p.anuidade_id = an.id
+            JOIN status_pagamento sp ON p.status_id = sp.id
+        ";
+        
+        $stmt = $this->pdo->prepare($query);
         $stmt->execute();
+
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
 
     // Método para obter um status de pagamento pelo ID
     public function getById($id)

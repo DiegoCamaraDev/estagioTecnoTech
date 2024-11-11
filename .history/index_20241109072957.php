@@ -21,7 +21,7 @@ require_once 'config/config.php';
             <li><a href="views/anuidade/cadastrar.php">Cadastrar Nova Anuidade</a></li>
             <li><a href="views/anuidade/listarAnuidade.php">Listar Anuidades</a></li>
             <li><a href="views/pagamento/checkout.php">Checkout de Anuidades</a></li>
-            
+            <li><a href="views/status/listar_status.php">Status de Pagamento dos Associados</a></li>
         </ul>
     </nav>
 
