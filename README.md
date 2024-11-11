@@ -33,17 +33,8 @@ Este projeto é um sistema de gestão de associados e anuidades que permite o ca
  
 - Importe as tabelas necessárias para o sistema.
 
-3. **Configure o acesso ao banco de dados no arquivo config.php, adicionando as credenciais do banco de dados:**
--
-<?php
-$db_host = 'localhost';
-$db_name = 'nome_do_banco_de_dados';
-$db_user = 'seu_usuario';
-$db_pass = 'sua_senha';
-
-$pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-?>
+3. **Configure o acesso ao banco de dados no arquivo config.php,
+adicionando as credenciais do banco de dados:**
 
 4. **Iniciar o Servidor:**
 - Execute o PHP built-in server ou configure o servidor Apache para servir o projeto:
