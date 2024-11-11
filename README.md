@@ -27,8 +27,12 @@ Este projeto é um sistema de gestão de associados e anuidades que permite o ca
 
 2. **Configuração do Banco de Dados:**
 - Crie um banco de dados no MySQL:
+  
  CREATE DATABASE nome_do_banco_de_dados;
-- Importe as tabelas necessárias para o sistema:
+
+ 
+- Importe as tabelas necessárias para o sistema.
+
 3. **Configure o acesso ao banco de dados no arquivo config.php, adicionando as credenciais do banco de dados:**
 -
 <?php
