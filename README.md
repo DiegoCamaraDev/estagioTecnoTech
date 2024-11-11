@@ -24,4 +24,38 @@ Este projeto é um sistema de gestão de associados e anuidades que permite o ca
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone [https://github.com/seu-usuario/seu-repositorio.git
+](https://github.com/DiegoCamaraDev/estagioTecnoTech/)
+2. **Configuração do Banco de Dados:**
+- Crie um banco de dados no MySQL:
+ CREATE DATABASE nome_do_banco_de_dados;
+- Importe as tabelas necessárias para o sistema:
+3. **Configure o acesso ao banco de dados no arquivo config.php, adicionando as credenciais do banco de dados:**
+-
+<?php
+$db_host = 'localhost';
+$db_name = 'nome_do_banco_de_dados';
+$db_user = 'seu_usuario';
+$db_pass = 'sua_senha';
+
+$pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+?>
+
+4. **Iniciar o Servidor:**
+- Execute o PHP built-in server ou configure o servidor Apache para servir o projeto:
+- php -S localhost:8000
+- Acesse a aplicação pelo navegador em http://localhost:8000.
+
+#Testando a Aplicação
+1. **Cadastro de Associados:**
+- Acesse a página de cadastro de associados e insira as informações necessárias.
+2. **Cadastro de Anuidades:**
+- Vá até a página de cadastro de anuidades e insira o ano e o valor da anuidade.
+3. **Cobrança e Pagamento de Anuidades:**
+- Realize a cobrança das anuidades associadas e teste o status de pagamento para identificar se o associado está em dia ou em atraso.
+## Estrutura de Pastas
+- **/config**: Configurações do banco de dados e variáveis do sistema.
+- **/model**: Classes para manipulação dos dados dos associados e anuidades.
+- **/view**: Páginas da interface do usuário, como listagem de associados e anuidades.
+- **/controller**: Lógica de controle entre as views e os models, contendo as regras de negócio e a manipulação das requisições.
