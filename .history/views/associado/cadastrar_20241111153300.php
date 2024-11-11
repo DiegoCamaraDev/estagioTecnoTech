@@ -19,7 +19,6 @@
         
         <button type="submit">Cadastrar</button>
     </form>
-    <br>
-    <a href="../../index.php">Voltar à página inicial</a>
+    
 </body>
 </html>

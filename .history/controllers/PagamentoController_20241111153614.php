@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $associado_id = $_POST['associado_id'];
     $anuidade_id = $_POST['anuidade_id'];
 
-    if ($pagamento->registerPayment($associadoId, $anuidadeId, $statusId)) {
+    if ($pagamento->registerPayment($associadoid, $anuidade_id)) {
         echo "Pagamento registrado com sucesso!";
     } else {
         echo "Erro ao registrar pagamento.";
